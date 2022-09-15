@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.black-background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: black;
+  z-index: 1;
+  opacity: 0.6;
+  left: 0;
+  top: 0;
+  display: none;
+}
+
+.main-container {
+  width: 80%;
+  margin: 0 auto;
+  font-family: monospace;
+
+  .tittle {
+    color: brown;
+    font-size: 30px;
+  }
+
+
+  hr {
+    border: 1px solid rgb(235, 235, 235);
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  .borderBottom {
+    border-bottom: 2px solid rgb(235, 235, 235);
+  }
+
+  td {
+    width: 500px;
+    height: 50px;
+  }
+
+  .tr:hover {
+    background-color: lightgray;
+  }
+
+  .td-first-name, .td-last-name, .td-phone-number {
+    cursor: pointer;
+
+    .desc, .desc2, .desc3{
+      display: none;
+      float: left;
+    }
+
+    .asc, .asc2, .asc3 {
+      display: none;
+      float: left;
+    }
+  }
+
+  .edit-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    display: none;
+    z-index: 2;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 250px;
+    margin: 0px auto;
+    margin-top: 50px;
+    background-color: lightgray;
+
+    .edit-input,
+    .edit-input-lastName,
+    .edit-input-phoneNumber {
+      height: 40px;
+      width: 200px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .save-btn {
+      height: 40px;
+      width: 80px;
+      border: none;
+      border-radius: 5px;
+      color: whitesmoke;
+      background-color: rgb(2, 161, 2);
+    }
+  }
+
+  .delete-btn {
+    background-color: red;
+    height: 30px;
+    width: 60px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .edit-btn {
+    background-color: yellow;
+    color: black;
+    @extend .delete-btn;
+  }
+
+  hr {
+    border: 1px solid rgb(235, 235, 235);
+  }
+
+  .text-plan-your-day {
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .text-userName-task-count {
+    @extend .text-plan-your-day;
+  }
+
+  .wrapper {
+    padding-top: 10px;
+    display: flex;
+
+    .task-input {
+      width: 80%;
+      height: 40px;
+      border: 1px solid lightgray;
+      margin-right: 20px;
+      border-radius: 5px;
+    }
+
+    .add-task-btn {
+      width: 10%;
+      height: 40px;
+      color: white;
+      border: none;
+      background-color: rgb(1, 172, 1);
+      border-radius: 5px;
+    }
+  }
+
+
+  .enter-info, .edit-info {
+    position: absolute;
+    height: 270px;
+    width: 400px;
+    border-radius: 5px;
+    top: -280px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    z-index: 2;
+    border: 1px solid #000;
+    opacity: 1;
+
+    .close-sign {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+    }
+
+    .add-phone-text {
+      font-weight: 600;
+      margin-left: 10px;
+      font-size: 18px;
+    }
+
+    .input-1-add,
+    .input-2-add {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .edit-input-name {
+      @extend .input-1-add;
+    }
+
+    .edit-input-lastName {
+      @extend .input-2-add;
+    }
+
+    .edit-input-phoneNumber {
+      @extend .input-3-add;
+    }
+
+    .input-2-add {
+      margin-top: 0;
+    }
+
+    .input-3-add {
+      margin-bottom: 10px;
+    }
+
+    .input-3-add,
+    .input-1-add,
+    .input-2-add {
+      height: 40px;
+      width: 350px;
+      border-radius: 5px;
+      border: none;
+      margin-left: 22px;
+      padding-left: 10px;
+    }
+
+    .btn-add {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 40px;
+      background-color: rgb(166, 221, 240);
+      border: none;
+      border-radius: 5px;
+    }
+  }
+
+  .edit-info{
+    position: absolute;
+    height: 270px;
+    width: 400px;
+    border-radius: 5px;
+    top: -280px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    z-index: 2;
+    border: 1px solid #000;
+    opacity: 1;
+  }
+}

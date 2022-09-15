@@ -1,0 +1,59 @@
+<div class="black-background"></div>
+
+<div class="main-container">
+        <p class="tittle">My phoneBook!</p>
+    <hr>
+    <div class="wrapper">
+        <!-- [(ngModel)]="search" -->
+        <input type="text" class="task-input">
+        <input type="button" class="add-task-btn" value="Add" (click)="showAddArea()">
+
+        <div class="enter-info">
+            <p class="add-phone-text">Add phone</p>
+            <p class="close-sign" (click)="closeEnterInfo()">x</p>
+            <hr>
+            <input class="input-1-add" type="text" placeholder="first name goes here">
+            <input class="input-2-add" type="text" placeholder="last name goes here">
+            <input class="input-3-add" type="text" placeholder="phone number goes here">
+            <hr>
+            <input class="btn-add" type="button" value="Save" (click)="addPerson()">
+        </div>
+    </div>
+</div>
+
+<div class="main-container">
+  <table>
+    <tr>
+      <td class="td-first-name" (click)="sortChangeFirstName()">First Name <span class="desc">▲</span> <span class="asc">▼</span></td>
+      <td class="td-last-name" (click)="sortChangeLastName()">Last name <span class="desc2">▲</span> <span class="asc2">▼</span> </td>
+      <td class="td-phone-number" (click)="sortChangePhoneNumber()">Number <span class="desc3">▲</span> <span class="asc3">▼</span> </td>
+      <td>Edit</td>
+      <td>Delete</td>
+    </tr>
+
+  </table>
+  <hr>
+  <table>
+    <tr *ngFor="let person of phoneBook  | sortPipe:tpye | sortPipe2:type | sortPipe3:type2 | searchPipe:search; index as i" class="borderBottom tr">
+      <td>{{ person.name }}</td>
+
+      <td class="task-status">{{ person.lastName }}</td>
+      <td class="task-status">{{ person.phoneNumber }}</td>
+
+      <td><input type="button" value="Edit" (click)="edit(i)" class="edit-btn"></td>
+      <td><input type="button" value="Delete" (click)="delete(i)" class="delete-btn"></td>
+    </tr>
+
+  </table>
+
+  <div class="edit-info">
+    <p class="add-phone-text">Add phone</p>
+    <p class="close-sign" (click)="closeEditInfo()">x</p>
+    <hr>
+    <input class="edit-input-name" type="text" placeholder="first name goes here">
+    <input class="edit-input-lastName" type="text" placeholder="last name goes here">
+    <input class="edit-input-phoneNumber" type="text" placeholder="phone number goes here">
+    <hr>
+    <input class="btn-add" type="button" value="Save" (click)="save()">
+</div>
+</div>
